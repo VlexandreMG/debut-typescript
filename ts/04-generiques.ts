@@ -4,8 +4,7 @@
 
 import { romazava } from './02-interfaces.ts';
 
-const p = premier([romazava]);                                                                                                                             
-
+                                                                                                                          
 // A. premier : renvoie le premier élément d'un tableau, ou undefined s'il est vide.
 //    Elle doit marcher pour un tableau de Plat, de nombres, de textes...
 //    premier([3, 4]) a le type  number | undefined
@@ -16,7 +15,7 @@ export function premier<T>(liste: T[]): T | undefined{
 }
 
 premier([3, 4]);
-premier(p);
+premier([romazava]);
 
 // B. Depot<T> : stocke des éléments qui ont TOUS un id numérique.
 //    - ajouter(element)  : ajoute l'élément
@@ -24,6 +23,7 @@ premier(p);
 //    - tous()            : renvoie une COPIE du tableau (modifier la copie ne change pas le dépôt)
 //    Contrainte : new Depot<number>() doit provoquer une erreur de compilation.
 //    Indice : <T extends { id: number }>
-export class Depot {
+export class Depot<T extends { id: number }> {
   // TODO
+  element: T[] = [];
 }
