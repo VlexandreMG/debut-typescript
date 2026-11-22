@@ -19,6 +19,11 @@ export function estPlat(x: unknown): x is Plat {
 //    sinon 'Erreur inconnue'.
 export function messageErreur(e: unknown): string {
   // TODO
+  if (e instanceof Error) {
+    return e.message;
+  } 
+  return "L'erreur est de type unknown";
+  
 }
 
 // C. source() renvoie des données non vérifiées.
