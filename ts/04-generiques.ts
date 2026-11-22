@@ -30,4 +30,12 @@ export class Depot<T extends { id: number }> {
   ajouter(element: T): void {
     this.elements.push(element);
   }
+
+  trouver(id: number): T | undefined {
+    return this.elements.find((e) => e.id === id);
+  }
+
+  tous(): T[] {
+    return [...this.elements];
+  }
 }
