@@ -30,8 +30,8 @@ export function rechercher(plats:Plat[] , mot:string , seulementDisponibles?:boo
 export function versNombre(valeur: number | string): number {
   // TODO
   if (typeof valeur === 'string') {
-    return valeur.length;
-  } else {
     return Number(valeur);
+  } else {
+    return valeur;
   }
 }
