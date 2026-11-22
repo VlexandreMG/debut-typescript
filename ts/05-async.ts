@@ -22,7 +22,7 @@ export function messageErreur(e: unknown): string {
   if (e instanceof Error) {
     return e.message;
   } 
-  return "L'erreur est de type unknown";
+  return "Erreur inconnue";
   
 }
 
@@ -31,4 +31,9 @@ export function messageErreur(e: unknown): string {
 //    ou [] si source() ne renvoie pas un tableau.
 export async function chargerPlats(source: () => Promise<unknown>): Promise<Plat[]> {
   // TODO
+  const donnees = await source();
+  if (!Array.isArray(donnees)) {
+    return [];
+  } 
+  return donnees.filter(estPlat);
 }
