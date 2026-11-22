@@ -25,5 +25,9 @@ premier([romazava]);
 //    Indice : <T extends { id: number }>
 export class Depot<T extends { id: number }> {
   // TODO
-  element: T[] = [];
+  elements: T[] = [];
+
+  ajouter(element: T): void {
+    this.elements.push(element);
+  }
 }
